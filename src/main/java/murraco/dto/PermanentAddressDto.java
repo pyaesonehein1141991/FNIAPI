@@ -2,41 +2,18 @@ package murraco.dto;
 
 import java.io.Serializable;
 
-import javax.xml.bind.annotation.XmlElement;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
+@Data
 public class PermanentAddressDto implements Serializable {
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 
-	@XmlElement(name = "permanentAddress", required = true)
+	@ApiModelProperty(position = 0,required = false)
 	private String permanentAddress;
 
-	@XmlElement(name = "townshipId", required = true)
+	@ApiModelProperty(position = 1,required = false)
 	private String townshipId;
-
-	public PermanentAddressDto() {
-	}
-
-	public String getPermanentAddress() {
-		return permanentAddress;
-	}
-
-	public void setPermanentAddress(String permanentAddress) {
-		this.permanentAddress = permanentAddress;
-	}
-
-	public String getTownshipId() {
-		return townshipId;
-	}
-
-	public void setTownshipId(String townshipId) {
-		this.townshipId = townshipId;
-	}
-
-	public void getFullTownShip() {
-
-	}
 
 }

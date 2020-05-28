@@ -168,21 +168,20 @@ public class Customer implements Serializable {
 	}
 
 	public Customer(CustomerDto customerDto) {
-		this.prefix = customerDto.getPrefix();
 		this.initialId = customerDto.getInitialId();
 		this.fatherName = customerDto.getFatherName();
 		this.idNo = customerDto.getIdNo();
 		this.dateOfBirth = customerDto.getDateOfBirth();
 		this.labourNo = customerDto.getLabourNo();
-		this.birthMark = customerDto.getBirthMark();
-		this.salary = customerDto.getSalary();
-		this.closedPolicy = customerDto.getClosedPolicy();
-		this.activePolicy = customerDto.getActivePolicy();
-		this.bankAccountNo = customerDto.getBankAccountNo();
+//		this.birthMark = customerDto.getBirthMark();
+//		this.salary = customerDto.getSalary();
+//		this.closedPolicy = customerDto.getClosedPolicy();
+//		this.activePolicy = customerDto.getActivePolicy();
+//		this.bankAccountNo = customerDto.getBankAccountNo();
 		this.gender = customerDto.getGender();
 		this.idType = customerDto.getIdType();
 		this.maritalStatus = customerDto.getMaritalStatus();
-		this.contentInfo = customerDto.getContentInfo() != null ? new ContentInfo(customerDto.getContentInfo()) : null;
+//		this.contentInfo = customerDto.getContentInfo() != null ? new ContentInfo(customerDto.getContentInfo()) : null;
 		this.name = customerDto.getName() != null ? new Name(customerDto.getName()) : null;
 	}
 

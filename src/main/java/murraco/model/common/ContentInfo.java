@@ -17,13 +17,6 @@ public class ContentInfo implements Serializable {
 	public ContentInfo() {
 	}
 
-	public ContentInfo(ContentInfoDto contentInfoDto) {
-		this.phone = contentInfoDto.getPhone();
-		this.fax = contentInfoDto.getFax();
-		this.mobile = contentInfoDto.getMobile();
-		this.email = contentInfoDto.getEmail();
-	}
-
 	public String getPhone() {
 		return this.phone;
 	}

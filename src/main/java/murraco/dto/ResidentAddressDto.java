@@ -2,34 +2,20 @@ package murraco.dto;
 
 import java.io.Serializable;
 
-import javax.xml.bind.annotation.XmlElement;
+import javax.validation.constraints.NotBlank;
+
+import io.swagger.annotations.ApiModelProperty;
 
 public class ResidentAddressDto implements Serializable {
 	private static final long serialVersionUID = -2074848703209463245L;
 
-	@XmlElement(name = "residentAddress", required = true)
+	@ApiModelProperty(position = 0,required = false)
+	@NotBlank(message = "ResidentAddress is mandatory")
 	private String residentAddress;
 
-	@XmlElement(name = "townshipId", required = true)
+	@ApiModelProperty(position = 1,required = false)
+	@NotBlank(message = "TownshipId is mandatory")
 	private String townshipId;
 
-	public ResidentAddressDto() {
-	}
-
-	public String getResidentAddress() {
-		return residentAddress;
-	}
-
-	public void setResidentAddress(String residentAddress) {
-		this.residentAddress = residentAddress;
-	}
-
-	public String getTownshipId() {
-		return townshipId;
-	}
-
-	public void setTownshipId(String townshipId) {
-		this.townshipId = townshipId;
-	}
 
 }
