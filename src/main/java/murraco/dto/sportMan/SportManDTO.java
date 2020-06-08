@@ -3,6 +3,7 @@ package murraco.dto.sportMan;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -11,6 +12,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import murraco.configuration.DateHandler;
+import murraco.dto.CustomerDto;
 
 @Data
 public class SportManDTO {
@@ -27,21 +29,15 @@ public class SportManDTO {
   @NotBlank(message = "Agent ID is mandatory")
   private String agentId;
 
-  @ApiModelProperty(position = 3, example = "BANCH00000000000000129032013", required = true)
-  @NotBlank(message = "Branch ID is mandatory")
-  private String branchId;
-
-  @ApiModelProperty(position = 4, example = "ISSYS001001000000000103062019", required = true)
-  @NotBlank(message = "Customer ID is mandatory")
-  private String customerId;
+  @Valid
+  @ApiModelProperty(position = 4, required = true)
+  @NotNull
+  private CustomerDto customer;
 
   @ApiModelProperty(position = 5, example = "ISSYS033001000000000104062019", required = true)
   @NotBlank(message = "Organization ID is mandatory")
   private String organizationId;
 
-  @ApiModelProperty(position = 6, example = "ISPRD0030001000000002331032013", required = true)
-  @NotBlank(message = "Product ID is mandatory")
-  private String productId;
 
   @ApiModelProperty(position = 7, example = "ISSYS0090001000000000229032013", required = true)
   @NotBlank(message = "Payment Type ID is mandatory")

@@ -40,6 +40,8 @@ UserController:
   search: Returns specific user by username
   me: Returns current user's data
   submitProposal: Create proposal and return policy no
+  
+  
 GroupFarmerController:
   submitproposal: Create Group farmer Proposal and return policy no
 AgentController:
@@ -50,4 +52,28 @@ BankController:
   banks: Get All Banks
 CustomerController:
   customers: Get All Customers
+GroupCriticalIllnessController:
+  submitproposal: Create Group CriticalIllness Proposal
+IndivicualCriticalIllnessController:
+  submitproposal: Create Individual CriticalIllness Proposal
+GroupHealthController:
+  submitproposal: Create Group Health Proposal
+IndividualHealthController:
+  submitproposal: Create Individual Health Proposal
+MicroHealthController:
+  submitproposal: Create Micro Health Proposal
+PersonalController:
+  submitproposal: Create Personal Accident Proposal
+PublicLifeController:
+  submitproposal: Create Public Life Proposal
+ShortTerm:
+  submitproposal: Create Short Term Endowment Proposal
+SnakeBiteController:
+  submitproposal: Create Snake Bite Proposal
+SportMan:
+  submitproposal: Create SprotMan Proposal
+
+
+
+
  

@@ -37,7 +37,7 @@ public class GroupFarmerController {
 		List<GroupFarmerResponseDTO> responseList = new ArrayList<>();
 		for (GroupFarmerProposalInsuredPersonDTO insuredPerson : groupFarmerProposalDTO
 				.getProposalInsuredPersonList()) {
-			dto.setPolicyNo("F/1904/0000000006");
+			dto.setProposalID("F9999999");
 			dto.setProposalNo("FP/1904/0000000006");
 			// dto.setGroupProposalNo("GFP/1904/0000000006");
 			/*

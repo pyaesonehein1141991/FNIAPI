@@ -34,7 +34,7 @@ public class StudentLifeController {
 		List<StudentLifeResponseDTO> responseList = new ArrayList<>();
 
 		studentLifeProposalDTO.getProposalInsuredPersonList().stream().forEach(insuredPerson -> {
-			dto.setPolicyNo("S/1904/0000000006");
+			dto.setProposalID("S000001");
 			dto.setProposalNo("SP/1904/0000000006");
 			/*
 			 * if (studentLifeProposalDTO.getCustomerID().equals(null) ||

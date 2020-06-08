@@ -3,6 +3,7 @@ package murraco.dto.personalAccident;
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -15,8 +16,9 @@ import murraco.dto.CustomerDto;
 
 @Data
 public class PersonalAccidentDTO {
+	@Valid
 	@ApiModelProperty(position = 0, required = true)
-	@NotNull(message = "Period Month is mandatory")
+	@NotNull
 	private CustomerDto customer;
 
 	@ApiModelProperty(position = 1, required = true)

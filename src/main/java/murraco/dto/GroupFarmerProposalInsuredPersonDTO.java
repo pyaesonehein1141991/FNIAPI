@@ -29,18 +29,6 @@ public class GroupFarmerProposalInsuredPersonDTO {
 	@NotNull(message = "proposedPremium is mandatory")
 	private double proposedPremium;
 
-	@ApiModelProperty(position = 4, example = "10000", required = true)
-	@NotNull(message = "approvedSumInsured is mandatory")
-	private double approvedSumInsured;
-
-	@ApiModelProperty(position = 5, example = "10000", required = true)
-	@NotNull(message = "approvedPremium is mandatory")
-	private double approvedPremium;
-
-	@ApiModelProperty(position = 6, example = "10000", required = true)
-	@NotNull(message = "basicTermPremium is mandatory")
-	private double basicTermPremium;
-
 	@ApiModelProperty(position = 7, example = "NRCNO", required = true)
 	@NotNull(message = "idType is mandatory")
 	private String idType;

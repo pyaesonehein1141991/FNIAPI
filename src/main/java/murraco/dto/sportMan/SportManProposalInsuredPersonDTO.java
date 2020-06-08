@@ -3,7 +3,6 @@ package murraco.dto.sportMan;
 import java.util.Date;
 import java.util.List;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -16,10 +15,6 @@ import murraco.configuration.DateHandler;
 
 @Data
 public class SportManProposalInsuredPersonDTO {
-
-
-  @ApiModelProperty(position = 0, example = "ISSYS001001000000000103062019")
-  private String customerID;
 
   @ApiModelProperty(position = 1, example = "U", required = true)
   @NotBlank(message = "InitialId is mandatory")
@@ -106,12 +101,5 @@ public class SportManProposalInsuredPersonDTO {
   @ApiModelProperty(position = 21, required = true)
   @NotNull(message = "insuredPersonBeneficiariesList is mandatory")
   private List<SportManInsuredPersonBeneficiariesDTO> insuredPersonBeneficiariesList;
-
-  @Valid
-  @ApiModelProperty(position = 22)
-  @NotNull(message = "insuredPersonBeneficiariesList is mandatory")
-  private List<SportManinsuredPersonPolicyHistoryRecordDTO> insuredPersonPolicyHistoryRecordList;
-
-
 
 }

@@ -1,8 +1,9 @@
-package murraco.dto.health;
+package murraco.dto.criticalIllness;
 
 import java.util.Date;
 import java.util.List;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -11,10 +12,16 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import murraco.configuration.DateHandler;
+import murraco.dto.CustomerDto;
 import murraco.model.common.ClassificationOfHealth;
 
 @Data
-public class GroupHealthInsuranceDTO {
+public class IndividualCriticalIllnessDTO {
+
+	@Valid
+	@ApiModelProperty(position = 0, required = true)
+	@NotNull
+	private CustomerDto customer;
 
 	@ApiModelProperty(position = 0, required = true)
 	@NotNull(message = "Period Month is mandatory")
@@ -24,18 +31,13 @@ public class GroupHealthInsuranceDTO {
 	@NotBlank(message = "SaleChannel Type is mandatory")
 	private String saleChannelType;
 
+
 	@ApiModelProperty(position = 4, example = "ISSYS002001000000000103062019", required = true)
 	@NotBlank(message = "Agent ID is mandatory")
 	private String agentId;
 
-	@ApiModelProperty(position = 5, example = "BANCH00000000000000129032013", required = true)
-	@NotBlank(message = "Branch ID is mandatory")
-	private String branchId;
-
-	
 
 	@ApiModelProperty(position = 7, example = "ISSYS033001000000000104062019", required = true)
-	@NotBlank(message = "Organization ID is mandatory")
 	private String organizationId;
 
 	@ApiModelProperty(position = 8, example = "ISSYS0090001000000000229032013", required = true)
@@ -61,8 +63,17 @@ public class GroupHealthInsuranceDTO {
 	@NotBlank(message = "Sales Points ID is mandatory")
 	private String salesPointsId;
 
-	@ApiModelProperty(position = 14, required = true)
+	@ApiModelProperty(position = 13, required = true)
+	@NotNull(message = "Customer Classification Of Health is mandatory")
+	private ClassificationOfHealth customerClsOfHealth;
+
+	/*
+	 * @ApiModelProperty(position = 14, required = false) private
+	 * List<InsuredPersonAttachment> attachmentList;
+	 */
+
+	@ApiModelProperty(position = 15, required = true)
 	@NotNull(message = "proposalInsuredPersonList is mandatory")
-	private List<IndividualHealthProposalInsuredPersonDTO> proposalInsuredPersonList;
+	private List<CriticalillnessProposalInsuredPersonDTO> proposalInsuredPersonList;
 
 }

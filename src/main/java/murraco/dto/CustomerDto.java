@@ -39,11 +39,11 @@ public class CustomerDto implements Serializable {
 	private String labourNo;
 
 	@ApiModelProperty(position = 5,example = "MALE", required = true)
-	@NotBlank(message = "Gender is mandatory")
+	@NotNull(message = "Gender is mandatory")
 	private Gender gender;
 
 	@ApiModelProperty(position = 6,example = "STILL_APPLYING", required = true)
-	@NotBlank(message = "Id Type is mandatory")
+	@NotNull(message = "Id Type is mandatory")
 	private IdType idType;
 
 	@ApiModelProperty(position = 7, required = false)
@@ -59,7 +59,7 @@ public class CustomerDto implements Serializable {
 
 	@Valid
 	@ApiModelProperty(position = 10, required = true)
-	@NotBlank(message = "ResidentAddress is mandatory")
+	@NotNull(message = "ResidentAddress is mandatory")
 	private ResidentAddressDto residentAddress;
 
 	@Valid
@@ -68,7 +68,7 @@ public class CustomerDto implements Serializable {
 
 	@Valid
 	@ApiModelProperty(position = 12, required = true)
-	@NotBlank(message = "Name is mandatory")
+	@NotNull(message = "Name is mandatory")
 	private NameDto name;
 
 	@ApiModelProperty(position = 13, required = false)

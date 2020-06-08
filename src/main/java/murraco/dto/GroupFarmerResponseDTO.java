@@ -4,14 +4,10 @@ import lombok.Data;
 
 @Data
 public class GroupFarmerResponseDTO {
-	private String groupProposalNo;
-
-	private String bpmsInsuredPersonId;
+	private String proposalID;
 
 	private String proposalNo;
-
-	private String policyNo;
-
-	private String customerId;
+	
+	private double proposedPremium=100000;
 
 }

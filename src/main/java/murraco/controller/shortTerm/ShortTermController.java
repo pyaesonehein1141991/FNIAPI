@@ -20,7 +20,7 @@ import murraco.dto.shortTerm.ShortTermEndowmentLifeDTO;
 
 @RestController
 @RequestMapping("/shortTerm")
-@Api(tags = "ShortTerm")
+@Api(tags = "Short-Term Life Insurance")
 public class ShortTermController {
 	
 

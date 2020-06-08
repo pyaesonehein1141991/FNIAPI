@@ -9,7 +9,9 @@ import lombok.Data;
 @Builder
 public class StudentLifeReponseDTO {
 
-	private String bpmsInsuredPersonId;
-	private String policyNo;
+	private String proposalID;
 
+	private String proposalNo;
+	
+	private double proposedPremium=100000;
 }

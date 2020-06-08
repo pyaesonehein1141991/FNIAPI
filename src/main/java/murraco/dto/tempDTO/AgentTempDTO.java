@@ -22,5 +22,8 @@ public class AgentTempDTO {
 	private IdType idType;
 
 	private String initialId;
+	
+	private String joinDate;
+	private String email;
 
 }

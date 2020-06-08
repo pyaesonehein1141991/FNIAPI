@@ -38,16 +38,6 @@ public class GroupFarmerLifeProposalDTO {
 	@NotBlank(message = "agentID is mandatory")
 	private String agentID;
 
-	@ApiModelProperty(position = 7, example = "ISSYS001000005575112092016")
-	private String referralID;
-
-	@ApiModelProperty(position = 8, example = "ISSYS022000009634116052019")
-	private String saleManId;
-
-	@ApiModelProperty(position = 9, example = "BANCH00000000000000129032018", required = true)
-	@NotBlank(message = "branchId is mandatory")
-	private String branchId;
-
 	@ApiModelProperty(position = 10, example = "11", required = true)
 	@NotBlank(message = "salePointId is mandatory")
 	private String salePointId;
@@ -56,18 +46,5 @@ public class GroupFarmerLifeProposalDTO {
 	@ApiModelProperty(position = 11, required = true)
 	@NotNull(message = "proposalInsuredPersonList is mandatory")
 	private List<GroupFarmerProposalInsuredPersonDTO> proposalInsuredPersonList;
-
-	@ApiModelProperty(position = 12, example = "TRF", required = true)
-	@NotBlank(message = "paymentChannel is mandatory")
-	private String paymentChannel;
-
-	@ApiModelProperty(position = 13, example = "ISSYS010005000000021118072016", required = true)
-	private String toBank;
-
-	@ApiModelProperty(position = 14, example = "ISSYS0100001000000000713032013", required = true)
-	private String fromBank;
-
-	@ApiModelProperty(position = 15, example = "CH34345345", required = true)
-	private String chequeNo;
 
 }

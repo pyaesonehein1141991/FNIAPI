@@ -26,20 +26,26 @@ public class SwaggerConfig {
 
 	@Bean
 	public Docket api() {
-		return new Docket(DocumentationType.SWAGGER_2)//
-				.select()//
-				.apis(RequestHandlerSelectors.any())//
-				.paths(Predicates.not(PathSelectors.regex("/error")))//
-				.build()//
-				.apiInfo(metadata())//
-				.useDefaultResponseMessages(false)//
-				.securitySchemes(new ArrayList<>(Arrays.asList(new ApiKey("Bearer %token", "Authorization", "Header"))))//
-				.tags(new Tag("users", "Operations about users"))//
-				.tags(new Tag("Group-Farmer", "Operation about group farmer")).tags(new Tag("ping", "Just a ping"))//
-				.tags(new Tag("Agents", "Operation About Agent"))//
-				.tags(new Tag("Branches", "Operation About Branch"))//
-				.tags(new Tag("Customers", "Operation About Customer"))//
-				.tags(new Tag("Banks", "Operation About Bank"))//
+		return new Docket(DocumentationType.SWAGGER_2)
+				.select()
+				.apis(RequestHandlerSelectors.any())
+				.paths(Predicates.not(PathSelectors.regex("/error")))
+				.build()
+				.apiInfo(metadata())
+				.useDefaultResponseMessages(false)
+				.securitySchemes(new ArrayList<>(Arrays.asList(new ApiKey("Bearer %token", "Authorization", "Header"))))
+				.tags(new Tag("users", "Operations about users"))
+				.tags(new Tag("Group-Farmer", "Operation about group farmer")).tags(new Tag("ping", "Just a ping"))
+				.tags(new Tag("Agents", "Operation About Agent"))
+				.tags(new Tag("Branches", "Operation About Branch"))
+				.tags(new Tag("Banks", "Operation About Bank"))
+				.tags(new Tag("Customers", "Operation About Customer"))
+				.tags(new Tag("Public-Life", "Operation about public Life Insurance"))
+				.tags(new Tag("Short-Term Life Insurance","Operation about Short-Term Life Insurance"))
+				.tags(new Tag("SnakeBite", "Operation about SnakeBite"))
+				.tags(new Tag("PersonalAccident", "Operation about Personal Accident"))
+				.tags(new Tag("SportMan","Operaton about Sprot Man"))
+				.tags(new Tag("Student-Life", "Operation about Student-Life"))
 				.genericModelSubstitutes(Optional.class);
 
 	}
@@ -49,7 +55,7 @@ public class SwaggerConfig {
 				.title("JSON Web Token Authentication API")//
 				.description(
 						"This is a sample JWT authentication service. You can find out more about JWT at [https://jwt.io/](https://jwt.io/). For this sample, you can use the `admin` or `client` users (password: admin and client respectively) to test the authorization filters. Once you have successfully logged in and obtained the token, you should click on the right top button `Authorize` and introduce it with the prefix \"Bearer \".")//
-				.version("1.0.0")//
+				.version("1.0.1")//
 				.license("MIT License").licenseUrl("http://opensource.org/licenses/MIT")//
 				.contact(new Contact(null, null, "pyaesonehein1141991@gmail.com"))//
 				.build();

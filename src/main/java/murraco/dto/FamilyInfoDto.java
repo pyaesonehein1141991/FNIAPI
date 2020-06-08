@@ -21,7 +21,7 @@ public class FamilyInfoDto implements Serializable {
 	@ApiModelProperty(position = 1, required = false)
 	private String idNo;
 
-	@ApiModelProperty(position = 2, required = false)
+	@ApiModelProperty(position = 2,example="2020-12-16", required = false)
 	private Date dateOfBirth;
 
 	@ApiModelProperty(position = 3, required = false)
