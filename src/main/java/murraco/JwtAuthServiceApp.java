@@ -17,40 +17,40 @@ import murraco.service.UserService;
 @SpringBootApplication
 public class JwtAuthServiceApp implements CommandLineRunner {
 
-  @Autowired
-  UserService userService;
+	@Autowired
+	UserService userService;
 
-  public static void main(String[] args) {
-    SpringApplication.run(JwtAuthServiceApp.class, args);
-  }
+	public static void main(String[] args) {
+		SpringApplication.run(JwtAuthServiceApp.class, args);
+	}
 
-  @Bean
-  public ModelMapper modelMapper() {
-    return new ModelMapper();
-  }
+	@Bean
+	public ModelMapper modelMapper() {
+		return new ModelMapper();
+	}
 
-  @Override
-  public void run(String... params) throws Exception {
-    User admin = new User();
-    admin.setUsername("admin");
-    admin.setPassword("admin");
-    admin.setEmail("admin@email.com");
-    admin.setAddress("Yangon");
-    admin.setPhoneNo("09425314835");
-    admin.setFatherName("Aung Aung");
-    admin.setGender("MALE");
-    admin.setDateOfBirth("11-41991");
-    admin.setRoles(new ArrayList<Role>(Arrays.asList(Role.ROLE_ADMIN)));
+	@Override
+	public void run(String... params) throws Exception {
+		User admin = new User();
+		admin.setUsername("admin");
+		admin.setPassword("admin");
+		admin.setEmail("admin@email.com");
+		admin.setAddress("Yangon");
+		admin.setPhoneNo("09425314835");
+		admin.setFatherName("Aung Aung");
+		admin.setGender("MALE");
+		admin.setDateOfBirth("11-41991");
+		admin.setRoles(new ArrayList<Role>(Arrays.asList(Role.ROLE_ADMIN)));
 
-    userService.signup(admin);
+		userService.signup(admin);
 
-    User client = new User();
-    client.setUsername("client");
-    client.setPassword("client");
-    client.setEmail("client@email.com");
-    client.setRoles(new ArrayList<Role>(Arrays.asList(Role.ROLE_CLIENT)));
+		User client = new User();
+		client.setUsername("client");
+		client.setPassword("client");
+		client.setEmail("client@email.com");
+		client.setRoles(new ArrayList<Role>(Arrays.asList(Role.ROLE_CLIENT)));
 
-    userService.signup(client);
-  }
+		userService.signup(client);
+	}
 
 }
