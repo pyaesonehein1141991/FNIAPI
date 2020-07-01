@@ -14,7 +14,7 @@ import lombok.Data;
 import murraco.configuration.DateHandler;
 
 @Data
-public class GroupFarmerLifeProposalDTO {
+public class FarmerLifeProposalDTO {
 
 	@ApiModelProperty(position = 0, example = "2019-12-16", required = true)
 	@NotNull(message = "SubmittedDate is mandatory")
@@ -45,6 +45,6 @@ public class GroupFarmerLifeProposalDTO {
 	@Valid
 	@ApiModelProperty(position = 11, required = true)
 	@NotNull(message = "proposalInsuredPersonList is mandatory")
-	private List<GroupFarmerProposalInsuredPersonDTO> proposalInsuredPersonList;
+	private List<FarmerProposalInsuredPersonDTO> proposalInsuredPersonList;
 
 }

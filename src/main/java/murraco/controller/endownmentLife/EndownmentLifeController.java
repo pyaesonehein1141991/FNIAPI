@@ -1,4 +1,4 @@
-package murraco.controller.publicLife;
+package murraco.controller.endownmentLife;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,13 +19,13 @@ import murraco.dto.responseDTO.LifeResponseDTO;
 import murraco.dto.shortTerm.ShortTermEndowmentLifeDTO;
 
 @RestController
-@RequestMapping("/publicLife")
-@Api(tags = "Public-Life")
-public class PublicLifeController {
+@RequestMapping("/endownmentLife")
+@Api(tags = "Endownment-Life")
+public class EndownmentLifeController {
 	
 
 	@PostMapping("/submitproposal")
-	@ApiOperation(value = "${PublicLifeController.submitproposal}")
+	@ApiOperation(value = "${EndownmentLifeController.submitproposal}")
 	@ApiResponses(value = { @ApiResponse(code = 400, message = "Something went wrong"),
 			@ApiResponse(code = 403, message = "Access denied"),
 			@ApiResponse(code = 500, message = "Expired or invalid JWT token") })

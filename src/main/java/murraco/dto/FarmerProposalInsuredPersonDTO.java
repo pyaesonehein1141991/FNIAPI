@@ -15,7 +15,7 @@ import lombok.Data;
 import murraco.configuration.DateHandler;
 
 @Data
-public class GroupFarmerProposalInsuredPersonDTO {
+public class FarmerProposalInsuredPersonDTO {
 
 	@ApiModelProperty(position = 0, example = "U", required = true)
 	@NotBlank(message = "InitialId is mandatory")
@@ -76,16 +76,13 @@ public class GroupFarmerProposalInsuredPersonDTO {
 	@ApiModelProperty(position = 19, example = "ISSYS011000009823001042019", required = true)
 	private String occupationID;
 
-	@ApiModelProperty(position = 20, example = "ISSYS001000005575112092016")
-	private String customerID;
-
-	@ApiModelProperty(position = 22, example = "ISSYS004000009724620062019", required = true)
+	@ApiModelProperty(position = 20, example = "ISSYS004000009724620062019", required = true)
 	@NotBlank(message = "townshipId is mandatory")
 	private String townshipId;
 
 	@Valid
 	@ApiModelProperty(position = 21)
 	@NotNull(message = "insuredPersonBeneficiariesList is mandatory")
-	private List<GrouopFarmerInsuredPersonBeneficiariesDTO> insuredPersonBeneficiariesList;
+	private List<FarmerInsuredPersonBeneficiariesDTO> insuredPersonBeneficiariesList;
 
 }

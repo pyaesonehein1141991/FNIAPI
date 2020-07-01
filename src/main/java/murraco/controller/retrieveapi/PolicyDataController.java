@@ -17,10 +17,8 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import murraco.dto.NameDto;
 import murraco.dto.ResponseDTO;
-import murraco.dto.retrieveDTO.AgentData;
 import murraco.dto.retrieveDTO.BeneficiaryData;
 import murraco.dto.retrieveDTO.BillCollectionData;
-import murraco.dto.retrieveDTO.CustomerData;
 import murraco.dto.retrieveDTO.InsuredPersonData;
 import murraco.dto.retrieveDTO.PolicyData;
 import murraco.dto.retrieveDTO.PolicyDataCriteria;
@@ -35,7 +33,8 @@ public class PolicyDataController {
 
 	@PostMapping("/policyData")
 	@ApiOperation(value = "${PolicyDataController.getPolicyData}")
-	@ApiResponses(value = { @ApiResponse(code = 400, message = "Something went wrong"), @ApiResponse(code = 403, message = "Access denied"),
+	@ApiResponses(value = { @ApiResponse(code = 400, message = "Something went wrong"),
+			@ApiResponse(code = 403, message = "Access denied"),
 			@ApiResponse(code = 500, message = "Expired or invalid JWT token") })
 	public ResponseDTO<Object> getPolicyData(@Valid @RequestBody PolicyDataCriteria policyDataCriteria) {
 
@@ -52,9 +51,7 @@ public class PolicyDataController {
 
 		ResponseDataDTO responseDataDTO1 = generateResponseData("");
 		responseDataDTO1.setApprove(false);
-		responseDataDTO1.setBeneficiaryDataList(null);
 		responseDataDTO1.setPolicyData(null);
-		responseDataDTO1.setInsuredPersonDataList(null);
 		responseDataDTO1.setBillCollectionDataList(null);
 		responseDataDTOList.add(responseDataDTO1);
 
@@ -79,61 +76,54 @@ public class PolicyDataController {
 		BillCollectionData billCollectionData = getBillCollectionData();
 		billCollectionDataList.add(billCollectionData);
 
-		ResponseDataDTO responseDataDTO = ResponseDataDTO.builder().proposalNo("FNI-HO/SL/PO/00000001/6-2019").isApprove(true).policyData(getPOlicyData())
-				.customer(getCustomerData()).agent(getAgentData()).insuredPersonDataList(nsuredPersonDataList).beneficiaryDataList(beneficiaryDataList)
-				.billCollectionDataList(billCollectionDataList).build();
+		ResponseDataDTO responseDataDTO = ResponseDataDTO.builder().proposalNo("FNI-HO/SL/PO/00000001/6-2019")
+				.isApprove(true).policyData(getPOlicyData()).billCollectionDataList(billCollectionDataList).build();
 
 		return responseDataDTO;
 
 	}
 
 	private PolicyData getPOlicyData() {
-		PolicyData policyData = PolicyData.builder().policyStartDate("2019-06-03 00:00:00.000").policyEndDate("2024-06-03 00:00:00.000").periodMonth(60)
-				.commenmanceDate("2019-06-03 16:28:23.327").policyNo("FNI-HO/SL/PL/00000005/6-2019").saleChannelType("AGENT").paymentType("MONTHLY").salesPoints("MOBILE")
-				.coverageDate("2020-06-03 00:00:00.000").productName("SHORT TERM ENDOWMENT LIFE ").build();
+		PolicyData policyData = PolicyData.builder().policyStartDate("2019-06-03 00:00:00.000")
+				.policyEndDate("2024-06-03 00:00:00.000").periodMonth(60).commenmanceDate("2019-06-03 16:28:23.327")
+				.policyNo("FNI-HO/SL/PL/00000005/6-2019").saleChannelType("AGENT").paymentType("MONTHLY")
+				.salesPoints("MOBILE").coverageDate("2020-06-03 00:00:00.000").productName("SHORT TERM ENDOWMENT LIFE ")
+				.build();
 
 		return policyData;
 	}
 
-	private CustomerData getCustomerData() {
-		NameDto nameDto = NameDto.builder().firstName("Mg").middleName("Mg").lastName("Aye").build();
-		CustomerData customerData = CustomerData.builder().name(nameDto).idNo("12/MAGADA(N)133312").dateOfBirth("1991-4-11").address("Yangon,Hlaing").phoneNo("0922222222")
-				.fatherName("Aung Aung").gender(Gender.MALE).occupation("Driver").build();
-		return customerData;
-	}
-
-	private AgentData getAgentData() {
-		NameDto nameDto = NameDto.builder().firstName("Ko").middleName("Ko").build();
-		AgentData agentData = AgentData.builder().name(nameDto).codeNo("TATLA/6-2019/00012/001").fatherName("Mg Mg").gender(Gender.MALE).idNo("15/MAGADA(N)111111")
-				.email("ko@mail.com").build();
-		return agentData;
-	}
-
 	private InsuredPersonData getInsuredPersonData() {
 		NameDto nameDto = NameDto.builder().firstName("Thida").build();
-		InsuredPersonData insuredPersonData = InsuredPersonData.builder().proposedSumInsured(100000000).proposedPremium(10000).idNo("11/KALANA(N)121212").fatherName("U Mya")
-				.dateOfBirth("2015-4-30").gender(Gender.FEMALE).address("Yangon,Hlaing").name(nameDto).build();
+		InsuredPersonData insuredPersonData = InsuredPersonData.builder().proposedSumInsured(100000000)
+				.proposedPremium(10000).idNo("11/KALANA(N)121212").fatherName("U Mya").dateOfBirth("2015-4-30")
+				.gender(Gender.FEMALE).address("Yangon,Hlaing").name(nameDto).build();
 
 		return insuredPersonData;
 	}
 
 	private BeneficiaryData getBeneficiaryData() {
 		NameDto nameDto = NameDto.builder().firstName("U Mya").build();
-		BeneficiaryData beneficiaryData = BeneficiaryData.builder().name(nameDto).dateOfBirth("1955-2-15").phoneNo("0933333333").idNo("12/MAGADA(N)222222").relationship("Daughter")
-				.percentage(100).address("Yangon,Hlaing").build();
+		BeneficiaryData beneficiaryData = BeneficiaryData.builder().name(nameDto).dateOfBirth("1955-2-15")
+				.phoneNo("0933333333").idNo("12/MAGADA(N)222222").relationship("Daughter").percentage(100)
+				.address("Yangon,Hlaing").build();
 		return beneficiaryData;
 	}
 
 	private BillCollectionData getBillCollectionData() {
-		List<String> remainingDateList = Arrays.asList("2019-06-01", "2019-07-01", "2019-08-01", "2019-09-01", "2019-10-01", "2019-11-01", "2019-12-01", "2020-01-01", "2020-02-01",
-				"2020-03-01", "2020-04-01", "2020-05-01", "2020-06-01", "2020-07-01", "2020-08-01", "2020-09-01", "2020-10-01", "2020-11-01", "2020-12-01", "2021-01-01",
-				"2021-02-01", "2021-03-01", "2021-04-01", "2021-05-01", "2021-06-01", "2021-07-01", "2021-08-01", "2021-09-01", "2021-10-01", "2021-11-01", "2021-12-01",
-				"2022-01-01", "2022-02-01", "2022-03-01", "2022-04-01", "2022-05-01", "2022-06-01", "2022-07-01", "2022-08-01", "2022-09-01", "2022-10-01", "2022-11-01",
-				"2022-12-01", "2023-01-01", "2023-02-01", "2023-03-01", "2023-04-01", "2023-05-01", "2023-06-01", "2023-07-01", "2023-08-01", "2023-09-01", "2023-10-01",
+		List<String> remainingDateList = Arrays.asList("2019-06-01", "2019-07-01", "2019-08-01", "2019-09-01",
+				"2019-10-01", "2019-11-01", "2019-12-01", "2020-01-01", "2020-02-01", "2020-03-01", "2020-04-01",
+				"2020-05-01", "2020-06-01", "2020-07-01", "2020-08-01", "2020-09-01", "2020-10-01", "2020-11-01",
+				"2020-12-01", "2021-01-01", "2021-02-01", "2021-03-01", "2021-04-01", "2021-05-01", "2021-06-01",
+				"2021-07-01", "2021-08-01", "2021-09-01", "2021-10-01", "2021-11-01", "2021-12-01", "2022-01-01",
+				"2022-02-01", "2022-03-01", "2022-04-01", "2022-05-01", "2022-06-01", "2022-07-01", "2022-08-01",
+				"2022-09-01", "2022-10-01", "2022-11-01", "2022-12-01", "2023-01-01", "2023-02-01", "2023-03-01",
+				"2023-04-01", "2023-05-01", "2023-06-01", "2023-07-01", "2023-08-01", "2023-09-01", "2023-10-01",
 				"2023-11-01", "2023-12-01", "2024-01-01", "2024-02-01", "2024-03-01", "2024-04-01", "2024-05-01");
 
-		BillCollectionData billCollectionData = BillCollectionData.builder().lastPaymentTerm(1).coverDate("2020-06-03 00:00:00.000").totalPaymentTerm(60)
-				.remainingDateList(remainingDateList).agentCommission(1000).termPremium(48000).build();
+		BillCollectionData billCollectionData = BillCollectionData.builder().lastPaymentTerm(1)
+				.coverDate("2020-06-03 00:00:00.000").totalPaymentTerm(60).remainingDateList(remainingDateList)
+				.agentCommission(1000).termPremium(48000).build();
 		return billCollectionData;
 	}
 

@@ -3,7 +3,7 @@ package murraco.dto;
 import lombok.Data;
 
 @Data
-public class GroupFarmerResponseDTO {
+public class FarmerResponseDTO {
 	private String proposalID;
 
 	private String proposalNo;

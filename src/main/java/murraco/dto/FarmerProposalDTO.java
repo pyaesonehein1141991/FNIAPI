@@ -10,7 +10,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import io.swagger.annotations.ApiModelProperty;
 import murraco.model.common.ProposalType;
 
-public class GroupFarmerProposalDTO {
+public class FarmerProposalDTO {
 
 	@ApiModelProperty(position = 0, example = "2019-12-16", required = true)
 	@NotNull(message = "Submitted date is mandatory")
@@ -45,7 +45,7 @@ public class GroupFarmerProposalDTO {
 	@NotBlank(message = "salePointId is mandatory")
 	private String salePointId;
 
-	public GroupFarmerProposalDTO() {
+	public FarmerProposalDTO() {
 
 	}
 

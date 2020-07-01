@@ -15,14 +15,6 @@ public class ResponseDataDTO {
 
 	private PolicyData policyData;
 
-	private CustomerData customer;
-
-	private AgentData agent;
-
-	private List<InsuredPersonData> insuredPersonDataList;
-
-	private List<BeneficiaryData> beneficiaryDataList;
-
 	private List<BillCollectionData> billCollectionDataList;
 
 }

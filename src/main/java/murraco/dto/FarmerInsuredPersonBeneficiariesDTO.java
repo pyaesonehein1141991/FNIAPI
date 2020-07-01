@@ -14,7 +14,7 @@ import lombok.Data;
 import murraco.configuration.DateHandler;
 
 @Data
-public class GrouopFarmerInsuredPersonBeneficiariesDTO {
+public class FarmerInsuredPersonBeneficiariesDTO {
 
 	@ApiModelProperty(position = 0, example = "U", required = true)
 	@NotBlank(message = "InitialId is mandatory")
