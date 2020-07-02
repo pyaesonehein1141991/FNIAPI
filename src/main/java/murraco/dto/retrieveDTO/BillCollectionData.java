@@ -11,7 +11,6 @@ public class BillCollectionData {
 	private int lastPaymentTerm;
 	private String coverDate;
 	private int totalPaymentTerm;
-	private List<String> remainingDateList;
-	private double agentCommission;
-	private double termPremium;
+	private List<RemainingData> remainingDateList;
+
 }

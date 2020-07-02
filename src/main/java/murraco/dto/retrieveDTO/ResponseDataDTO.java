@@ -1,7 +1,5 @@
 package murraco.dto.retrieveDTO;
 
-import java.util.List;
-
 import lombok.Builder;
 import lombok.Data;
 
@@ -10,11 +8,9 @@ import lombok.Data;
 public class ResponseDataDTO {
 
 	private String proposalNo;
-
 	private boolean isApprove;
-
 	private PolicyData policyData;
 
-	private List<BillCollectionData> billCollectionDataList;
+	private BillCollectionData billCollectionData;
 
 }
