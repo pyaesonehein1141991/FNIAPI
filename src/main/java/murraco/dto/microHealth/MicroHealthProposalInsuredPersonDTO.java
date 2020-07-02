@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import murraco.configuration.DateHandler;
-
+import murraco.dto.InsuredPersonAddOnDTO;
 
 @Data
 public class MicroHealthProposalInsuredPersonDTO {
@@ -37,13 +37,10 @@ public class MicroHealthProposalInsuredPersonDTO {
   @NotNull(message = "unit is mandatory")
   private int unit;
 
-
-
   @ApiModelProperty(position = 7, example = "ISSYS0120001000000000129032013", required = true)
   @NotBlank(message = "relationshipId is mandatory")
   @NotEmpty
   private String relationshipId;
-
 
 
   @ApiModelProperty(position = 2, example = "AUNG ", required = true)
@@ -105,12 +102,14 @@ public class MicroHealthProposalInsuredPersonDTO {
   @NotNull(message = "insuredPersonBeneficiariesList is mandatory")
   private List<MicroHealthProposalInsuredPersonBeneficiariesDTO> insuredPersonBeneficiariesList;
 
+  @Valid
+  @ApiModelProperty(position = 21)
+  @NotNull(message = "insuredPersonPolicyHistoryRecordList is mandatory")
+  private List<MicroHealthinsuredPersonPolicyHistoryRecordDTO> insuredPersonPolicyHistoryRecordList;
 
   @Valid
   @ApiModelProperty(position = 21)
-  @NotNull(message = "insuredPersonBeneficiariesList is mandatory")
-  private List<MicroHealthinsuredPersonPolicyHistoryRecordDTO> insuredPersonPolicyHistoryRecordList;
-
-
+  @NotNull(message = "insuredPersonAddonOnList is mandatory")
+  private List<InsuredPersonAddOnDTO> insuredPersonAddonOnList;
 
 }
