@@ -11,20 +11,6 @@ public class AddonTempDTO {
 	
 	private String id;
 
-	private double basedAmount;
-
-	private Boolean isCompulsory;
-
-	private boolean isBasedOnKeyfactor;
-
-	private double maximumValue;
-
-	private double minimumValue;
-
-	private AddOnType premiumRateType;
-	
-	private ProductBaseType productBaseType;
-	
-	private String sumInsuredPerUnit;
+	private String name;
 
 }

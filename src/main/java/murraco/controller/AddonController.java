@@ -38,18 +38,13 @@ public class AddonController {
 	private List<AddonTempDTO> populateAddon() {
 		List<AddonTempDTO> resultList = new ArrayList<>();
 
-		AddonTempDTO addon1 = AddonTempDTO.builder().id("ISSYS014001000000000110012020").basedAmount(100)
-				.isBasedOnKeyfactor(false).isCompulsory(false).maximumValue(0).minimumValue(0)
-				.premiumRateType(AddOnType.BASED_ON_PREMIUN).productBaseType(null).build();
-		AddonTempDTO addon2 = AddonTempDTO.builder().id("ISSYS014001000009374822062017").basedAmount(100)
-				.isBasedOnKeyfactor(false).isCompulsory(null).maximumValue(0).minimumValue(0)
-				.premiumRateType(AddOnType.BASED_ON_PREMIUN).productBaseType(null).build();
-		AddonTempDTO addon3 = AddonTempDTO.builder().id("ISSYS014001000009603223042019").basedAmount(100)
-				.isBasedOnKeyfactor(true).isCompulsory(false).maximumValue(10).minimumValue(1)
-				.premiumRateType(AddOnType.PER_UNIT).productBaseType(ProductBaseType.UNIT).build();
-		AddonTempDTO addon4 = AddonTempDTO.builder().id("ISSYS014001000009603323042019").basedAmount(100)
-				.isBasedOnKeyfactor(true).isCompulsory(false).maximumValue(10).minimumValue(1)
-				.premiumRateType(AddOnType.PER_UNIT).productBaseType(ProductBaseType.UNIT).build();
+		AddonTempDTO addon1 = AddonTempDTO.builder().id("ISSYS014001000000000110012020").name("PERSONAL ACCIDENT ADDON")
+				.build();
+		AddonTempDTO addon2 = AddonTempDTO.builder().id("ISSYS014001000009374822062017").name("PERSONAL ACCIDENT ADDON")
+				.build();
+		AddonTempDTO addon3 = AddonTempDTO.builder().id("ISSYS014001000009603223042019")
+				.name("1 Operation and Miscarriage").build();
+		AddonTempDTO addon4 = AddonTempDTO.builder().id("ISSYS014001000009603323042019").name("2 Clinical").build();
 
 		resultList.add(addon1);
 		resultList.add(addon2);
