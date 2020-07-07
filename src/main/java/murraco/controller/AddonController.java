@@ -13,11 +13,6 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import murraco.dto.ResponseDTO;
 import murraco.dto.tempDTO.AddonTempDTO;
-import murraco.dto.tempDTO.AgentTempDTO;
-import murraco.model.common.AddOnType;
-import murraco.model.common.Gender;
-import murraco.model.common.IdType;
-import murraco.model.common.ProductBaseType;
 
 @RestController
 @RequestMapping("/addon")
@@ -26,8 +21,7 @@ public class AddonController {
 
 	@GetMapping("/addons")
 	@ApiOperation(value = "${AddonController.addons}")
-	@ApiResponses(value = { @ApiResponse(code = 400, message = "Something went wrong"),
-			@ApiResponse(code = 403, message = "Access denied"),
+	@ApiResponses(value = { @ApiResponse(code = 400, message = "Something went wrong"), @ApiResponse(code = 403, message = "Access denied"),
 			@ApiResponse(code = 500, message = "Expired for invalid JWT token") })
 	public ResponseDTO<Object> addons() {
 		List<AddonTempDTO> resultList = populateAddon();
@@ -38,18 +32,19 @@ public class AddonController {
 	private List<AddonTempDTO> populateAddon() {
 		List<AddonTempDTO> resultList = new ArrayList<>();
 
-		AddonTempDTO addon1 = AddonTempDTO.builder().id("ISSYS014001000000000110012020").name("PERSONAL ACCIDENT ADDON")
-				.build();
-		AddonTempDTO addon2 = AddonTempDTO.builder().id("ISSYS014001000009374822062017").name("PERSONAL ACCIDENT ADDON")
-				.build();
-		AddonTempDTO addon3 = AddonTempDTO.builder().id("ISSYS014001000009603223042019")
-				.name("1 Operation and Miscarriage").build();
-		AddonTempDTO addon4 = AddonTempDTO.builder().id("ISSYS014001000009603323042019").name("2 Clinical").build();
+		AddonTempDTO addon1 = AddonTempDTO.builder().id("ISSYS014001000000000110012020").name("Operation and Miscarriage").build();
+		AddonTempDTO addon2 = AddonTempDTO.builder().id("ISSYS014001000009374822062017").name("Clinical").build();
+		// AddonTempDTO addon3 =
+		// AddonTempDTO.builder().id("ISSYS014001000009603223042019")
+		// .name("1 Operation and Miscarriage").build();
+		// AddonTempDTO addon4 =
+		// AddonTempDTO.builder().id("ISSYS014001000009603323042019").name("2
+		// Clinical").build();
 
 		resultList.add(addon1);
 		resultList.add(addon2);
-		resultList.add(addon3);
-		resultList.add(addon4);
+		// resultList.add(addon3);
+		// resultList.add(addon4);
 
 		return resultList;
 	}

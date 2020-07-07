@@ -112,8 +112,6 @@ public class PolicyDataController {
 				"2023-01-01", "2023-02-01", "2023-03-01", "2023-04-01", "2023-05-01", "2023-06-01", "2023-07-01", "2023-08-01", "2023-09-01", "2023-10-01", "2023-11-01",
 				"2023-12-01", "2024-01-01", "2024-02-01", "2024-03-01", "2024-04-01", "2024-05-01");
 
-		BillCollectionData billCollectionData = BillCollectionData.builder().lastPaymentTerm(1).coverDate("2020-06-03 00:00:00.000").totalPaymentTerm(60).build();
-		// .remainingDateList(remainingDateList).agentCommission(1000).termPremium(48000)
 		List<RemainingData> remainingDataList = new ArrayList<>();
 		RemainingData remainingData = RemainingData.builder().date("2019-06-01").agentCommission(1000).termPremium(4800).isPaid(true).build();
 		remainingDataList.add(remainingData);
@@ -121,6 +119,10 @@ public class PolicyDataController {
 			RemainingData remainingData1 = RemainingData.builder().date(date).agentCommission(1000).termPremium(4800).isPaid(false).build();
 			remainingDataList.add(remainingData1);
 		}
+		BillCollectionData billCollectionData = BillCollectionData.builder().lastPaymentTerm(1).coverDate("2020-06-03 00:00:00.000").totalPaymentTerm(60)
+				.remainingDateList(remainingDataList).build();
+		// .remainingDateList(remainingDateList).agentCommission(1000).termPremium(48000)
+
 		return billCollectionData;
 	}
 
